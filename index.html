@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My first website</title>
-  </head>
-  <body>
-    <h1>Hello world!</h1>
-    <p>Welcome to my first website.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Square eyes connecting film lovers</title>
+</head>
+<body>
+  <header class="main-header">
+    <a href="#main-content"><img src="/images/squareeyesLogo.png" alt="Square eyes connecting film-lovers." width="100%"></a>
+    <nav>
+      <ul class="navbar">
+        <li class="nav-item"><a href="#main-content" class="current-selection">HOME</a></li>
+        <li class="nav-item"><a href="library.html">FILMS</a></li>
+        <li class="nav-item"><a href="library.html">DIRECTORS</a></li>
+        <li class="nav-item"><a href="about.html">ABOUT</a></li>
+        <li class="nav-item"><a href="contact.html">CONTACT</a></li>
+        <li class="nav-item"><a href="checkout.html">CHECKOUT</a></li>
+        <li class="nav-item"><form role="search"><input type="search" name="q" placeholder="Search available films..." aria-label="Search thorugh site content"><button>SEARCH</button></form></li>
+        <li class="nav-item"><a>LOGIN</a><a>SIGN UP</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="featured-item" aria-labelledby="featured">
+    <h1 id="featured">title of currently featured film</h1>
+    <p>flavor text about the film</p>
+  </section>
+  <main id="main-content">
+    <div class="griditem"></div>
+    <div class="griditem"></div>
+    <div class="griditem"></div>
+    <div class="griditem"></div>
+    <div class="griditem"></div>
+    <div class="griditem"></div>
+    <div class="griditem"></div>
+    <div class="griditem"></div>
+    <div class="griditem"></div>
+    <div class="griditem"></div>
+  </main>
+  <footer>
+
+  </footer>
+</body>
 </html>

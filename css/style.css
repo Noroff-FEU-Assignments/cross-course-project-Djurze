@@ -1,0 +1,67 @@
+.main-header {
+    background-color: hsl(13, 68%, 63%);
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header img {
+    max-height: 6rem;
+}
+
+li {
+    list-style-type: none;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 0.5em;
+    margin-right: 1em;
+    background-color: hsl(52, 50%, 91%);
+    color: black;
+}
+
+.nav-item a:hover {
+    background-color: hsl(13, 68%, 63%);
+}
+
+.nav-item form * {
+    background-color: hsl(52, 50%, 91%);
+    font-size: 1.3rem;
+    border: none;
+    padding: 0.5em;
+    margin-right: 1em;
+}
+
+.nav-item *+*  {
+    margin-left: -1em;
+}
+
+.featured-item {
+    height: 100vh;
+    width: auto;
+    background-image: url(/images/featuredfilm.jpg);
+    background-size: cover;
+    display: flex;
+}
+
+#main-content {
+    display: grid;
+    grid: [row1-start] "header header" 1fr [row1-end]
+    / 1fr 1fr;
+    justify-items: center;
+    gap: 5rem;
+}
+
+.griditem {
+    width: 800px;
+    height: 800px;
+    background-color: blue;
+}
