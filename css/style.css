@@ -1,22 +1,29 @@
+body {display: contents; font-family: "Roboto", sans-serif;}
 .main-header {
     background-color: hsl(13, 68%, 63%);
-    height: 6rem;
+    height: 10vh;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
 .main-header img {
-    max-height: 6rem;
+    max-height: 10vh;
 }
 
+nav {
+    margin-inline-start: auto;
+}
 li {
     list-style-type: none;
 }
 
+p {
+    margin-inline: 2rem;
+    text-align: center;
+}
+
 .navbar {
     display: flex;
-    align-items: center;
 }
 
 .nav-item a {
@@ -45,38 +52,57 @@ li {
 }
 
 .featured-item {
-    height: 100vh;
+    height: 90vh;
     width: auto;
     background-image: url(/images/featuredfilm.jpg);
     background-size: cover;
     display: flex;
+    align-items: flex-end;
+    font-family: "Merrieweather", serif;
+    font-size: 3rem;
 }
+.featured-item div {background-color: hsl(0, 0%, 0%, 10%); color: white;}
 
 #main-content {
     display: grid;
-    grid: [row1-start] "header header" 1fr [row1-end]
-    / 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
     justify-items: center;
-    gap: 5rem;
+    column-gap: 2rem;
+    margin-inline: 2rem;
 }
 
 .griditem {
-    width: 800px;
-    height: 800px;
-    background-color: blue;
+    height: auto;
     margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    font-size: 2rem;
+    align-items: center;
 }
 
-#topgrid {
-    grid-area: header;
-    background-color:hsl(13, 68%, 63%);
+.griditem img {
+    max-width: 100%;
+}
 
+
+#topgrid {
+    grid-column: span 2;
+    background-color:hsl(13, 68%, 63%);
 }
 
 @media (max-width: 1000px) {
     #main-content {
-        grid: [row1-start] "header" 1fr [row1-end]
-        / 1fr;
+        grid-template-columns: minmax(250px, 1fr);
+    }
+    #topgrid {
+        grid-column: span 1;
+    }
+    .main-header img {
+        display: none;
+    }
+    nav {
+        margin-inline: auto;
     }
 }
     
