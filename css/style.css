@@ -64,4 +64,19 @@ li {
     width: 800px;
     height: 800px;
     background-color: blue;
+    margin-top: 2rem;
 }
+
+#topgrid {
+    grid-area: header;
+    background-color:hsl(13, 68%, 63%);
+
+}
+
+@media (max-width: 1000px) {
+    #main-content {
+        grid: [row1-start] "header" 1fr [row1-end]
+        / 1fr;
+    }
+}
+    
