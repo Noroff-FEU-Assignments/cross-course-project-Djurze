@@ -18,7 +18,7 @@ li {
 }
 
 p {
-    margin-inline: 2rem;
+    margin: 2rem;
     text-align: center;
 }
 
@@ -39,14 +39,20 @@ p {
     background-color: hsl(13, 68%, 63%);
 }
 
+/* Removed searchbar, so this doesn't do anything. But, might re-add searchbar later.  
 .nav-item form * {
     background-color: hsl(52, 50%, 91%);
     font-size: 1.3rem;
     border: none;
     padding: 0.5em;
-    margin-right: 1em;
-}
+    margin-right: 1 em;
+} 
+*/
 
+/*Removes the gap between the "Login" button and "Sign up" button.
+  * + * selects only the second sibliing of the same parent .nav-item
+  depends on the .nav-item a selector to have an equal "margin-right" property.
+  Consider better option*/
 .nav-item *+*  {
     margin-left: -1em;
 }
@@ -65,44 +71,57 @@ p {
 
 #main-content {
     display: grid;
-    grid-template-columns: repeat(2, minmax(250px, 1fr));
-    justify-items: center;
-    column-gap: 2rem;
-    margin-inline: 2rem;
+    grid-template-columns: repeat(3, minmax(250px, 30%));
+    grid-template-rows: max-content;
+    grid-auto-rows: minmax(500px, 50%);
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 .griditem {
-    height: auto;
-    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     background-color: lightgray;
     font-size: 2rem;
     align-items: center;
+    justify-content: space-around;
+    max-height: 100%;
+    margin: 2rem;
+
 }
 
 .griditem img {
-    max-width: 100%;
+    width: 90%;
+    margin-top: 1rem;
 }
 
 
 #topgrid {
-    grid-column: span 2;
+    margin-top: 2rem;
+    height: fit-content;
+    grid-column: span 3;
     background-color:hsl(13, 68%, 63%);
 }
 
-@media (max-width: 1000px) {
+@media(max-width: 1300px) {
     #main-content {
-        grid-template-columns: minmax(250px, 1fr);
+        grid-template-columns: repeat(2, minmax(250px, 40%));
     }
-    #topgrid {
-        grid-column: span 1;
-    }
-    .main-header img {
+    #topgrid { grid-column: span 2 }
+    :root {font-size: 12px;}
+}
+
+@media (max-width: 1000px) {
+    #main-content { grid-template-columns: minmax(250px, 75%) }
+    #topgrid { grid-column: span 1 }
+    .main-header img { display: none }
+    nav { margin-inline: auto }
+    :root { font-size: 10px }
+}
+/*Current version nav-bar breaks at 700px width. Look into option for adding a toggle to display it on screens less than 700px wide*/
+@media(max-width: 700px) {
+    .main-header {
         display: none;
-    }
-    nav {
-        margin-inline: auto;
     }
 }
     
