@@ -1,29 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&family=Roboto&display=swap" rel="stylesheet"> 
-        <title>Square eyes connecting film lovers</title>
-      </head>
-      <body>
-        <header class="main-header">
-          <a href="#main-content"><img src="/images/squareeyesLogo.png" alt="Square eyes connecting film-lovers." width="100%"></a>
-          <nav>
-            <ul class="navbar">
-              <li class="nav-item"><a href="index.html" class="current-selection">HOME</a></li>
-              <li class="nav-item"><a href="library.html">FILMS</a></li>
-              <li class="nav-item"><a href="about.html">ABOUT</a></li>
-              <li class="nav-item"><a href="checkout.html">CHECKOUT</a></li>
-              <li class="nav-item"><a>LOGIN</a><a>SIGN UP</a></li>
-            </ul>
-          </nav>
-        </header>
-      
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Checkout - Square Eyes</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="index.html"
+        ><img
+          src="/images/squareeyesLogo.png"
+          alt="Square eyes connecting film-lovers."
+      /></a>
+      <nav>
+        <ul class="navbar">
+          <li class="nav-item">
+            <a href="index.html">HOME</a>
+          </li>
+          <li class="nav-item"><a href="library.html">FILMS</a></li>
+          <li class="nav-item"><a href="#">CHECKOUT</a></li>
+          <li class="nav-item">
+            <a>
+              <label for="login">SIGN IN</label>
+            </a>
+            <a>SIGN UP</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="checkout">
+      <form>
+        <label for="full_name">
+          Full name: <input type="text" id="full_name" />
+        </label>
+        <label for="address">
+          Address: <input type="address" id="address" />
+        </label>
+        <label for="email"> Email: <input type="email" id="email" /> </label>
+        <input type="submit" name="submit" value="Purchase" />
+      </form>
+    </main>
+    <footer class="header">
+      <ul class="navbar">
+        <li class="nav-item"><a href="about.html">ABOUT</a></li>
+        <li class="nav-item"><a href="about.html">CONTACT</a></li>
+      </ul>
+    </footer>
+  </body>
 </html>

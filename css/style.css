@@ -1,18 +1,20 @@
 body {display: contents; font-family: "Roboto", sans-serif;}
-.main-header {
+
+.header {
     background-color: hsl(13, 68%, 63%);
     height: 10vh;
     display: flex;
     align-items: center;
 }
 
-.main-header img {
+.header img {
     max-height: 10vh;
 }
 
 nav {
     margin-inline-start: auto;
 }
+
 li {
     list-style-type: none;
 }
@@ -22,8 +24,13 @@ p {
     text-align: center;
 }
 
+footer.header {
+    background-color: hsl(234, 20%, 30%);
+}
+
 .navbar {
     display: flex;
+    margin-inline-start: auto;
 }
 
 .nav-item a {
@@ -39,23 +46,21 @@ p {
     background-color: hsl(13, 68%, 63%);
 }
 
-/* Removed searchbar, so this doesn't do anything. But, might re-add searchbar later.  
-.nav-item form * {
-    background-color: hsl(52, 50%, 91%);
-    font-size: 1.3rem;
-    border: none;
-    padding: 0.5em;
-    margin-right: 1 em;
-} 
-*/
+footer .nav-item a:hover {
+    background-color: hsl(234, 20%, 30%);
+}
 
 /*Removes the gap between the "Login" button and "Sign up" button.
   * + * selects only the second sibliing of the same parent .nav-item
   depends on the .nav-item a selector to have an equal "margin-right" property.
   Consider better option*/
-.nav-item *+*  {
+.nav-item a + a {
     margin-left: -1em;
 }
+
+
+/* Toggles the "purchased movies" section on the library/films page when the login button is clicked */
+#login:checked ~ .login-toggle { display: none; }
 
 .featured-item {
     height: 90vh;
@@ -86,8 +91,8 @@ p {
     align-items: center;
     justify-content: space-around;
     max-height: 100%;
-    margin: 2rem;
-
+    margin: 1rem;
+    padding: 1rem;
 }
 
 .griditem img {
@@ -103,6 +108,48 @@ p {
     background-color:hsl(13, 68%, 63%);
 }
 
+.left-right-divided {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+}
+
+.left-right-divided section {
+    max-width: 50ch;
+    font-size: 1.3rem;
+    text-align: left;
+    margin: 2rem;
+}
+
+.movie-selection {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-selection > * { margin-inline: auto; }
+
+.movie-selection section {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-items: center;
+}
+
+.movie-selection .griditem { 
+    max-width: 400px;
+    text-align: center;
+}
+
+.checkout { height: 80vh; }
+.checkout form {
+    margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
 @media(max-width: 1300px) {
     #main-content {
         grid-template-columns: repeat(2, minmax(250px, 40%));
@@ -112,14 +159,16 @@ p {
 }
 
 @media (max-width: 1000px) {
-    #main-content { grid-template-columns: minmax(250px, 75%) }
-    #topgrid { grid-column: span 1 }
+    #main-content { 
+        display: flex;
+        flex-direction: column;
+    }
     .main-header img { display: none }
     nav { margin-inline: auto }
     :root { font-size: 10px }
 }
-/*Current version nav-bar breaks at 700px width. Look into option for adding a toggle to display it on screens less than 700px wide*/
-@media(max-width: 700px) {
+/*Current version nav-bar breaks at 500px width. Look into option for adding a toggle to display it on screens less than 500px wide*/
+@media(max-width: 500) {
     .main-header {
         display: none;
     }
