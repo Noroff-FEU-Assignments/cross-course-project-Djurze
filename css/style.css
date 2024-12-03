@@ -1,0 +1,176 @@
+body {display: contents; font-family: "Roboto", sans-serif;}
+
+.header {
+    background-color: hsl(13, 68%, 63%);
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.header img {
+    max-height: 10vh;
+}
+
+nav {
+    margin-inline-start: auto;
+}
+
+li {
+    list-style-type: none;
+}
+
+p {
+    margin: 2rem;
+    text-align: center;
+}
+
+footer.header {
+    background-color: hsl(234, 20%, 30%);
+}
+
+.navbar {
+    display: flex;
+    margin-inline-start: auto;
+}
+
+.nav-item a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 0.5em;
+    margin-right: 1em;
+    background-color: hsl(52, 50%, 91%);
+    color: black;
+}
+
+.nav-item a:hover {
+    background-color: hsl(13, 68%, 63%);
+}
+
+footer .nav-item a:hover {
+    background-color: hsl(234, 20%, 30%);
+}
+
+/*Removes the gap between the "Login" button and "Sign up" button.
+  * + * selects only the second sibliing of the same parent .nav-item
+  depends on the .nav-item a selector to have an equal "margin-right" property.
+  Consider better option*/
+.nav-item a + a {
+    margin-left: -1em;
+}
+
+
+/* Toggles the "purchased movies" section on the library/films page when the login button is clicked */
+#login:checked ~ .login-toggle { display: none; }
+
+.featured-item {
+    height: 90vh;
+    width: auto;
+    background-image: url(/images/featuredfilm.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    font-family: "Merrieweather", serif;
+    font-size: 3rem;
+}
+.featured-item div {background-color: hsl(0, 0%, 0%, 10%); color: white;}
+
+#main-content {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 30%));
+    grid-template-rows: max-content;
+    grid-auto-rows: minmax(500px, 50%);
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.griditem {
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: space-around;
+    max-height: 100%;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.griditem img {
+    width: 90%;
+    margin-top: 1rem;
+}
+
+
+#topgrid {
+    margin-top: 2rem;
+    height: fit-content;
+    grid-column: span 3;
+    background-color:hsl(13, 68%, 63%);
+}
+
+.left-right-divided {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+}
+
+.left-right-divided section {
+    max-width: 50ch;
+    font-size: 1.3rem;
+    text-align: left;
+    margin: 2rem;
+}
+
+.movie-selection {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-selection > * { margin-inline: auto; }
+
+.movie-selection section {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-items: center;
+}
+
+.movie-selection .griditem { 
+    max-width: 400px;
+    text-align: center;
+}
+
+.checkout { height: 80vh; }
+.checkout form {
+    margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media(max-width: 1300px) {
+    #main-content {
+        grid-template-columns: repeat(2, minmax(250px, 40%));
+    }
+    #topgrid { grid-column: span 2 }
+    :root {font-size: 12px;}
+}
+
+@media (max-width: 1000px) {
+    #main-content { 
+        display: flex;
+        flex-direction: column;
+    }
+    .main-header img { display: none }
+    nav { margin-inline: auto }
+    :root { font-size: 10px }
+}
+/*Current version nav-bar breaks at 500px width. Look into option for adding a toggle to display it on screens less than 500px wide*/
+@media(max-width: 500) {
+    .main-header {
+        display: none;
+    }
+}
+    
